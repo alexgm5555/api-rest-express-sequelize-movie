@@ -1,8 +1,10 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 
-import authControler from './auth/auth.controler';
+import authController from './auth/auth.controler';
 import { User } from './auth/auth.model';
+
+import characterController from "./characters/characters.controler";
 
 class Server {
     private app: Application;
@@ -25,7 +27,8 @@ class Server {
     }
 
     routes() {
-        this.app.use('/api/auth', authControler);
+        this.app.use('/api/auth', authController);
+        this.app.use('/api/characters', characterController);
     }
 
     midlewares() {
@@ -39,6 +42,7 @@ class Server {
     async dbConnect() {
         try {
             await User.sync();
+            console.info('---------Ready to use---------');
         } catch (error) {
             console.error('Unable to connect to the database:', error);
         }
