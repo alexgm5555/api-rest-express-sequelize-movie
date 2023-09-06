@@ -10,26 +10,7 @@
 import express from 'express';
 // import {connetBD} from './database';
 import { config } from 'dotenv';
-import { createPool } from 'mysql2/promise';
-
+import Server from './server';
 config()
-const app = express();
-const port  =  process.env.DB_PORT;
 
-const poll = createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  port: 3306
-});
-
-
-app.listen(port, () => {
-    console.log(`run service1 POR ${port}`);
-});
-
-app.use(express.json());
-
-// connetBD();
-
-app.use('/api', require('./routes/app.routes'));
+const server = new Server();
