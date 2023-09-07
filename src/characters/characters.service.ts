@@ -79,7 +79,7 @@ const findByName = async (name: any ) => {
 
 const findByAge = async (age: any ) => {
   const resultCharacter: any = await Characters.findAll({where: {age}});
-  let result: any =[];
+  let result: any = [];
   for (const _characters of resultCharacter) {
     const _characterMovieDb: any = await CharactersMovies.findAll({where: {CharacterId: _characters.id}});
     let moviesArray: any[] = [] 
@@ -109,7 +109,6 @@ const findByMovie = async (movie: any ) => {
 }
 
 const findAll = async ( ) => {
-  console.log('findAll');
   const result = await Characters.findAll();
   if(!result) throw 'Character table is empty';
   return result;
@@ -117,7 +116,7 @@ const findAll = async ( ) => {
 
 export const updateCharacter = async (req: Request, res:Response ) => {
   try {
-    return res.status(400).json({
+    return res.status(200).json({
       message: 'Update Register'
     });
   } catch (error) {
@@ -132,7 +131,7 @@ export const deleteCharacter = async (req: Request, res:Response ) => {
   try {
     const { name } = req.query;
     await Characters.destroy({where: {name}});
-    return res.status(400).json({
+    return res.status(200).json({
       message: 'Character Deleted'
     })
 

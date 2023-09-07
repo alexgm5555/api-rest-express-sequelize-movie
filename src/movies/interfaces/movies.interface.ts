@@ -3,4 +3,6 @@ export interface MoviesInterface {
   title: string,
   dateToCreated: string,
   starts: number,
+  characters?: string[],
+  genre?: string[]
 }
