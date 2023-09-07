@@ -1,0 +1,1 @@
+export { CharactersMoviesInterface } from './charactersMovies.interface';
