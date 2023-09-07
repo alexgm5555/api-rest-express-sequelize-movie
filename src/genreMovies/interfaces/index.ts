@@ -1,0 +1,1 @@
+import { GenreMoviesInterface } from './genreMovies.interface';

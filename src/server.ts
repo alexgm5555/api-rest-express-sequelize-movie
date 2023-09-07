@@ -11,6 +11,7 @@ import { Characters as CharacterModel } from './characters/characters.model';
 import { Movies as MoviesModel } from './movies/movies.model';
 import { CharactersMovies as CharactersMoviesModel } from './charactersMovies/charactersMovies.model';
 import { Genre as GenreModel } from './genre/genre.model';
+import { GenreMovies as GenreMoviesModel } from './genreMovies/genreMovies.module';
 
 
 
@@ -53,6 +54,7 @@ class Server {
             await MoviesModel.sync();
             await CharactersMoviesModel.sync();
             await GenreModel.sync();
+            await GenreMoviesModel.sync();
             console.info('---------Ready to use---------');
         } catch (error) {
             console.error('Unable to connect to the database:', error);
