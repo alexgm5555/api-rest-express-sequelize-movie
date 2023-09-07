@@ -2,9 +2,17 @@ import express, { Application } from 'express';
 import cors from 'cors';
 
 import authController from './auth/auth.controler';
-import { User } from './auth/auth.model';
+import characterController from './characters/characters.controler';
+import MoviesController from './movies/movies.controler';
+import SeedController from './seed/seed.controller';
 
-import characterController from "./characters/characters.controler";
+import { User as UserModel } from './auth/auth.model';
+import { Characters as CharacterModel } from './characters/characters.model';
+import { Movies as MoviesModel } from './movies/movies.model';
+import { CharactersMovies as CharactersMoviesModel } from './charactersMovies/charactersMovies.model';
+import { Genre as GenreModel } from './genre/genre.model';
+
+
 
 class Server {
     private app: Application;
@@ -29,19 +37,22 @@ class Server {
     routes() {
         this.app.use('/api/auth', authController);
         this.app.use('/api/characters', characterController);
+        this.app.use('/api/movies', MoviesController);
+        this.app.use('/api/seed', SeedController);
     }
 
     midlewares() {
-        // Parseo body
         this.app.use(express.json());
-
-        // Cors
         this.app.use(cors());
     }
 
     async dbConnect() {
         try {
-            await User.sync();
+            await UserModel.sync();
+            await CharacterModel.sync();
+            await MoviesModel.sync();
+            await CharactersMoviesModel.sync();
+            await GenreModel.sync();
             console.info('---------Ready to use---------');
         } catch (error) {
             console.error('Unable to connect to the database:', error);
