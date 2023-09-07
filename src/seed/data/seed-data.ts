@@ -67,6 +67,13 @@ export const initialData: any = {
       title: 'Car 2',
       dateToCreated: '10/10/23',
       starts: 5
+    },
+    {
+      id: uuid(),
+      image: '1740250-00-A_0_2003.jpg',
+      title: 'test17',
+      dateToCreated: '10/10/23',
+      starts: 5
     }
   ],
   genres: [
