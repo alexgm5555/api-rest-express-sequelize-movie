@@ -41,7 +41,7 @@ POST http://localhost/api/movies //Crear la pelicula
 GET http://localhost/api/movies  //Obtener todos las peliculas
 GET http://localhost/api/movies?genre=drama  //Obtiene los peliculas asociados al genero drama
 GET http://localhost/api/movies?order=ASC  //Obtener todas las peliculas ordenadas
-DELETE http://localhost/api/movies?name=test17 //Elimina el pelicula test17
+DELETE http://localhost/api/movies?name=Elemental //Elimina el pelicula Elemental
 ```
 
 

@@ -49,29 +49,29 @@ export const initialData: any = {
   movies: [
     {
       id: uuid(),
-      image: '1740250-00-A_0_2003.jpg',
-      title: 'El Carro',
+      image: '/kSf9svfL2WrKeuK8W08xeR5lTn8.jpg',
+      title: 'Sound of Freedom',
       dateToCreated: '10/10/23',
       starts: 5
     },
     {
       id: uuid(),
-      image: '1740250-00-A_0_2003.jpg',
-      title: 'Cars',
+      image: '/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+      title: 'Oppenheimer',
       dateToCreated: '10/10/23',
       starts: 5
     },
     {
       id: uuid(),
-      image: '1740250-00-A_0_2003.jpg',
-      title: 'Car 2',
+      image: '/1dviyIqBrbnigrbodIvfMQj8mJ0.jpg',
+      title: 'H4Z4RD',
       dateToCreated: '10/10/23',
       starts: 5
     },
     {
       id: uuid(),
-      image: '1740250-00-A_0_2003.jpg',
-      title: 'test17',
+      image: '/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg',
+      title: 'Elemental',
       dateToCreated: '10/10/23',
       starts: 5
     }
