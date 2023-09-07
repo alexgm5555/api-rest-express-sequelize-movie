@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequaleze  from '../database';
 
-export const User = sequaleze.define('user', {
+export const User = sequaleze.define('User', {
   id: {
     type: DataTypes.STRING,
     primaryKey: true,
